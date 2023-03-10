@@ -1,0 +1,110 @@
+    ''' printMenu
+    Author: Ramos Espinoza Martin Sebastian
+    Date: 10/03/2023
+    Description: Descripción de los tipos de datos en python
+    ''' 
+    ''' printMenu
+    1. ¿Qué es lo que hace el código en un comentario antes de modificarlo?
+    R=Funciona como un menu en el cual se le ofrecen 4 opciones al usuario con ayuda de un swich, pero como no se tienen funciones a las cuales llamar cada funcion no hace nada.
+    2. ¿Cuál es la sintaxis de un while?
+    R=  En python es:
+    while condicion:
+      Código a ejecutar mientras la condición sea verdadera
+    3. ¿Exite swhitch en python?
+    R=Si y no, porque no existe como tal la estructura del swich, pero se puede remprazar con un if-elif-else, condicionandos con los valores de variables.
+    4. ¿Qué es un elif?
+    R=Es parte de la estructura de control if para verificar multiples condiciones en una sola sentencia if.
+    5. ¿Qué función de se ejecuta al correr el script?
+    R=Se ejecuta la ultima linea del codigo, el main, para que este de inicio al bucle while.
+    '''
+import os
+def printMenu():
+   
+    os.system('cls')
+    print("Bienvenido al menú seleccione una opción \n\n")
+    print("\t1)Suma\n")
+    print("\t2)Resta\n")
+    print("\t3)Division\n")
+    print("\t4)Multiplicacion\n")
+    print("\t5)Salir\n")
+    option = input()
+    if(option):
+        return int (option)
+    else:
+        return 0
+        
+def suma(a, b):
+    if a % 2 == 0 and b % 2 == 0:
+        print("La suma es:", a + b)
+    else:
+        print("Al menos uno de los numeros no es par.")
+
+
+def resta(c, d):
+    if c % 5 == 0 and  d % 5 == 0:
+        print("La resta es:", c - d)
+    else:
+        print("Al menos uno de los numeros no son impares.")
+        
+        
+def division(e, f):
+    if e % f == 0:
+        print("La division es:", e / f)
+    else:
+        print("La division no es exacta.")
+        
+        
+def multiplicacion(g, h):
+    if g > 10 and h > 10:
+        print("La multiplicacion es:", g * h)
+    else:
+        print("Al menos uno de los numeros no es mayor a 10.")
+
+
+
+
+def main():
+    flag = 0
+    inutil =''
+    while(flag!=5):
+        flag = printMenu()
+        
+        if (flag==1):
+            a = int(input("Ingrese un numero par: "))
+            b = int(input("Ingrese otro numero par: "))
+            suma(a, b)
+            
+        elif (flag==2):
+            c = int(input("Ingrese un numero impar: "))
+            d = int(input("Ingrese otro numero impar: "))
+            resta(c, d)
+            
+            
+        elif (flag==3):
+            e = int(input("Ingrese un numero: "))
+            f = int(input("Ingrese otro numero: "))
+            division(e, f)
+            
+            
+        elif (flag==4):
+            g = int(input("Ingrese un numero mayor a 10: "))
+            h = int(input("Ingrese otro número mayor a 10: "))
+            multiplicacion(g, h)
+            
+            
+        elif (flag==5):
+            return 0;
+            
+            
+        elif (flag==0):
+            print("\nNo valido")
+        else:
+            print("\nNo valido")
+            
+
+        print("\nOprima enter tecla cualquiera para continuar ")
+        input(inutil)
+    print("excelente")
+
+if __name__ == "__main__":
+    main()
